@@ -131,3 +131,8 @@ bands = Band.create([
 p "Created #{Item.count} items"
 p "Created #{User.count} users"
 p "Created #{Band.count} bands"
+
+# Try using rails runner commands, e.g.:
+    # rails runner "p Item.pluck :brand" => an array of item brands
+    # rails runner "p User.pluck :email" => an array of user emails
+    # rails runner "p Band.pluck :name" => an array of band names
