@@ -2,9 +2,10 @@
 # Run db:seed command when necessary
 
 # Destroy all records to have a blank slate - so we can run seed command as many times as we want.
+Comment.destroy_all
 Item.destroy_all
-User.destroy_all
 Band.destroy_all
+User.destroy_all
 
 # Create seeds for items, users and bands.
 items = Item.create([
@@ -135,34 +136,42 @@ bands = Band.create([
 comments = Comment.create([
     {
         description: "I love Ibanez.",
+        user_id: 1,
         item_id: 1
     },
     {
         description: "Shure mic's are the sure way to go!",
+        user_id: 2,
         item_id: 4
     },
     {
         description: "Pearl makes me pearl!",
+        user_id: 3,
         item_id: 3
     },
     {
         description: "Remeber Warwick Cappa?",
+        user_id: 4,
         item_id: 5
     },
     {
         description: "Ibanabanez. LOL!",
+        user_id: 5,
         item_id: 1
     },
     {
         description: "Shurely you've got to be kidding!",
+        user_id: 1,
         item_id: 4
     },
     {
         description: "I had one of these as my first drumkit!",
+        user_id: 2,
         item_id: 3
     },
     {
         description: "Or Warwick Davies?",
+        user_id: 3,
         item_id: 5
     }
 ])
@@ -171,6 +180,7 @@ comments = Comment.create([
 p "Created #{Item.count} items"
 p "Created #{User.count} users"
 p "Created #{Band.count} bands"
+p "Created #{Comment.count} comments"
 
 # Try using rails runner commands, e.g.:
     # rails runner "p Item.pluck :brand" => an array of item brands
