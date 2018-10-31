@@ -11,27 +11,16 @@
 </ul>
 
 <p>
-  <strong>Brand:</strong>
-  <%= @item.brand %>
+  <strong>User Name:</strong>
+  <%= @user.name %>
 </p>
 
 <p>
-  <strong>Model:</strong>
-  <%= @item.model %>
+  <strong>Bio:</strong>
+  <%= @user.bio %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @item.description %>
+  <strong>Genres:</strong>
+  <%= @user.genres %>
 </p>
-
-<% if @item.for_sale %>
-  <p>
-    <strong>For Sale:</strong>
-    <%= @item.price %>
-  </p>
-<% end %>
-
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>

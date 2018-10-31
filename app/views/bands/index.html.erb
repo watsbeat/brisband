@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bands</h1>
+<%# Nav Buttons %>
+<ul>
+    <li><%= link_to 'Home', home_index_path %></li>
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <li><%= link_to 'Log In', new_user_session_path %></li>
+    <%# Redirect to profile of particular logged in user %>
+    <%#= link_to 'User Profile', user_path %>
+    <li>User Profile</li>
+</ul>
+
+<h1>Artists</h1>
 
 <table>
   <thead>
