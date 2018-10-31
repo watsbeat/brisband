@@ -20,5 +20,11 @@
   <%= @item.price %>
 </p>
 
+<h4>Comments</h4>
+<% for comment in @item.comments %>
+  <p><strong><%= comment.user.name %></strong> says <%= comment.description %></p>
+<% end %>
+
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
