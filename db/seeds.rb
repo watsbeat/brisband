@@ -130,7 +130,42 @@ bands = Band.create([
         genre: "Heavy Metal",
         status: false      
     }
-]) 
+])
+
+comments = Comment.create([
+    {
+        description: "I love Ibanez.",
+        item_id: 1
+    },
+    {
+        description: "Shure mic's are the sure way to go!",
+        item_id: 4
+    },
+    {
+        description: "Pearl makes me pearl!",
+        item_id: 3
+    },
+    {
+        description: "Remeber Warwick Cappa?",
+        item_id: 5
+    },
+    {
+        description: "Ibanabanez. LOL!",
+        item_id: 1
+    },
+    {
+        description: "Shurely you've got to be kidding!",
+        item_id: 4
+    },
+    {
+        description: "I had one of these as my first drumkit!",
+        item_id: 3
+    },
+    {
+        description: "Or Warwick Davies?",
+        item_id: 5
+    }
+])
 
 # Prints number of items, users & bands created
 p "Created #{Item.count} items"
