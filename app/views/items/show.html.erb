@@ -25,10 +25,13 @@
   <%= @item.description %>
 </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
+<% if @item.for_sale %>
+  <p>
+    <strong>For Sale:</strong>
+    <%= @item.price %>
+  </p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
