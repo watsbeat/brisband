@@ -9,6 +9,7 @@ Band.destroy_all
 # Create seeds for items, users and bands.
 items = Item.create([
     {
+        id: 1,
         brand: "Ibanez",
         model: "RGA320",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
@@ -16,24 +17,28 @@ items = Item.create([
         
     }, 
     {
+        id: 2,
         brand: "Pearl",
         model: "Demon Drive Pedals",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         price: 0.00
     },
     {
+        id: 3,
         brand: "Pearl",
         model: "EXPORT EXL",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         price: 1000.00
     },
     {
+        id: 4,
         brand: "Shure",
         model: "SM-58",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         price: 0.00
     },
     {
+        id: 5,
         brand: "Warwick",
         model: "Thumb NT 1988",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
@@ -43,6 +48,7 @@ items = Item.create([
 
 users = User.create([
     {
+        id: 1,
         email: "bruce@gmail.com",
         password: "bruceblue",
         name: "Bruce Blue",
@@ -50,6 +56,7 @@ users = User.create([
         genres: "Rock, Punk" 
     }, 
     {
+        id: 2,
         email: "mary@gmail.com",
         password: "marymauve",
         name: "Mary Mauve",
@@ -57,6 +64,7 @@ users = User.create([
         genres: "Indie, Pop" 
     },
     {
+        id: 3,
         email: "lars@gmail.com",
         password: "larslavender",
         name: "Lars Lavender",
@@ -64,6 +72,7 @@ users = User.create([
         genres: "Heavy Metal" 
     },
     {
+        id: 4,
         email: "georgia@gmail.com",
         password: "georgiagreen",
         name: "Georgia Green",
@@ -71,6 +80,7 @@ users = User.create([
         genres: "Folk" 
     },
     {
+        id: 5,
         email: "owen@gmail.com",
         password: "owenorange",
         name: "Owen Orange",
@@ -81,30 +91,35 @@ users = User.create([
 
 bands = Band.create([
     {
+        id: 1,
         name: "Apple Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Punk",
         status: true       
     },
     {
+        id: 2,
         name: "Blueberry Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Blues, Alternative",
         status: true       
     },
     {
+        id: 3,
         name: "Banana Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Rock",
         status: false       
     },
     {
+        id: 4,
         name: "Strawberry Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Indie, Pop",
         status: true       
     },
     {
+        id: 5,
         name: "Mango Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Heavy Metal",
