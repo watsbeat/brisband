@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :bands
+  resources :comments
   resources :items
   get 'users/:id', to: 'users#show'
   devise_for :users
