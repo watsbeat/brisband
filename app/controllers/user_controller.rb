@@ -2,7 +2,9 @@ class UserController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_user, only: [:show]
   
+  # GET user/1 
   def show
+    @user = User.find(params[:id])
   end
 
   private

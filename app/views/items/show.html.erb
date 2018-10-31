@@ -15,10 +15,19 @@
   <%= @item.description %>
 </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
+<% if @item.for_sale %>
+  <p>
+    <strong>For Sale:</strong>
+    <%= @item.price %>
+  </p>
+<% end %>
+
+
+<h4>Comments</h4>
+<% for comment in @item.comments %>
+  <p><strong><%= comment.user.name %></strong> says <%= comment.description %></p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
