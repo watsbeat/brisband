@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User Name:</strong>
-  <%= @user.name %>
-</p>
+<h1><%= @user.name %></h1>
 
 <p>
   <strong>Bio:</strong>
@@ -14,3 +11,29 @@
   <strong>Genres:</strong>
   <%= @user.genres %>
 </p>
+
+<h2>Items</h2>
+<% for item in @user.items %>
+  <p>
+    <strong>Brand:</strong>
+    <%= item.brand %>
+  </p>
+
+  <p>
+    <strong>Model:</strong>
+    <%= item.model %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= item.description %>
+  </p>
+
+  <% if item.for_sale %>
+    <p>
+      <strong>For Sale:</strong>
+      <%= item.price %>
+    </p>
+  <% end %>
+  <%= link_to 'Show', item %>
+<% end %>

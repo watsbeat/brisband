@@ -22,12 +22,15 @@
   </p>
 <% end %>
 
+<p>
+  <strong>Belongs To:</strong>
+  <%= link_to @item.user.name, @item.user %>
+</p>
 
 <h4>Comments</h4>
 <% for comment in @item.comments %>
-  <p><strong><%= comment.user.name %></strong> says <%= comment.description %></p>
+  <p><strong><%= link_to comment.user.name, comment.user %></strong> says <%= comment.description %></p>
 <% end %>
-
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
