@@ -10,17 +10,8 @@
   </head>
 
   <body>
-    <p>
-      <%= link_to 'Home', home_index_path %>
-      <% if user_signed_in? %>
-        <%#= link_to 'Profile', current_user %>
-        <%= link_to 'Account', current_user %> 
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-        Logged in as <%= current_user.name %>
-      <% else %>
-        <%= link_to 'Sign up', new_user_registration_path %> |
-        <%= link_to 'Log in', new_user_session_path %>
-      <% end %>
+    
+    <%= render "home/_topnav"%>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
