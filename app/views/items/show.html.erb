@@ -43,6 +43,16 @@
   <%= render partial:'comments/form', locals: {item: @item} %>
 
 <% end %>
-<% for comment in @item.comments %>
-  <p><strong><%= link_to comment.user.name, comment.user %></strong> says <%= comment.description %></p>
+<% for comment in @item.comments.reverse %>
+  <p>
+  <strong><%= link_to comment.user.name, comment.user %></strong> says <%= comment.description %>
+  </p>  
+  <p><%=time_ago_in_words comment.created_at%> ago</p>
+  <p>
+    <% if comment.can_edit?(current_user) %>
+      <%# <%= link_to 'Edit Comment', edit_comment_path(comment) %> %>
+      <%# <%= render partial:'comments/form', locals: {item: @item} %> %>
+
+    <% end %>
+  </p>
 <% end %>
