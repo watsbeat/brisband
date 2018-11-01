@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   has_many :comemnts
   has_many :items
   # Include default devise modules. Others available are:
