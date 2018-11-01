@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    @item.user_id = current_user.id
 
     respond_to do |format|
       if @item.save
@@ -70,6 +71,12 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:brand, :model, :description, :price)
+      params.require(:item).permit(:brand, :model, :description, :price, :for_sale)
+    end
+
+    def check_permissions
+      if !@item.can_change?(current_user)
+        redirect_to(request.referrer || root_path, :alert => "You are not authorized to perform that 		          action!")
+      end
     end
 end
