@@ -15,7 +15,7 @@ users = User.create([
         password: "bruceblue",
         name: "Bruce Blue",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
-        genres: "Rock, Punk" 
+        genres: "Rock, Punk"
     }, 
     {
         id: 2,
@@ -148,35 +148,40 @@ bands = Band.create([
         name: "Apple Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Punk",
-        status: true       
+        status: true,
+        users: [User.find(1), User.find(4), User.find(5)]
     },
     {
         id: 2,
         name: "Blueberry Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Blues, Alternative",
-        status: true       
+        status: true,
+        users: [User.find(2), User.find(3), User.find(4)]
     },
     {
         id: 3,
         name: "Banana Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Rock",
-        status: false       
+        status: false,
+        users: [User.find(3), User.find(4), User.find(5)]
     },
     {
         id: 4,
         name: "Strawberry Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Indie, Pop",
-        status: true       
+        status: true,
+        users: [User.find(1), User.find(2), User.find(3)]
     },
     {
         id: 5,
         name: "Mango Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Heavy Metal",
-        status: false      
+        status: false,
+        users: [User.find(2), User.find(3), User.find(5)]
     }
 ])
 
