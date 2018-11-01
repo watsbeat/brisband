@@ -20,5 +20,10 @@
   <%= @band.status %>
 </p>
 
-<%= link_to 'Edit', edit_band_path(@band) %> |
-<%= link_to 'Back', bands_path %>
+<%= link_to 'Edit', edit_band_path(@band) %> 
+
+<% if current_user %>
+  <% if @band.can_destroy?(current_user) %>
+    <%= link_to 'Destroy', @band, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %
