@@ -15,6 +15,13 @@
   <%= @band.genre %>
 </p>
 
+<strong>Members:</strong>
+<ul>
+  <% for user in @band.users %>
+    <li><%= link_to user.name, user %></li>
+  <% end %>
+</ul>
+
 <p>
   <strong>Status:</strong>
   <%= @band.status %>
