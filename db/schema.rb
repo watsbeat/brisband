@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_10_31_121546) do
-=======
-ActiveRecord::Schema.define(version: 2018_10_31_233145) do
->>>>>>> a3d55607882dcb958e2ad629c14f36d4e7313cde
+ActiveRecord::Schema.define(version: 2018_11_01_034706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +22,11 @@ ActiveRecord::Schema.define(version: 2018_10_31_233145) do
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bands_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "band_id", null: false
   end
 
   create_table "comments", force: :cascade do |t|
