@@ -72,4 +72,10 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:brand, :model, :description, :price)
     end
+
+    def check_permissions
+      if !@item.can_change?(current_user)
+        redirect_to(request.referrer || root_path, :alert => "You are not authorized to perform that 		          action!")
+      end
+    end
 end
