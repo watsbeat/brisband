@@ -19,6 +19,7 @@ users = User.create([
     }, 
     {
         id: 2,
+        image: "https://www.mainewomensnetwork.com/Resources/Pictures/vicki%20aqua%20headshot-smallmwn.jpg",
         email: "mary@gmail.com",
         password: "marymauve",
         name: "Mary Mauve",
