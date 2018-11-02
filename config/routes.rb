@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :bands
-  resources :comments
-  resources :items
+  resources :bands, :comments, :items, :charges
   get 'user/:id', to: 'user#show', as: 'user'
   devise_for :users
   get 'home/index'

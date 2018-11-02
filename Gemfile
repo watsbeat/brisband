@@ -70,3 +70,9 @@ gem "devise", "~> 4.5"
 gem "rolify", "~> 5.2"
 
 gem "x-editable-rails", "~> 1.5"
+
+gem "stripe", "~> 3.28"
+
+gem "cloudinary", "~> 1.9"
+
+gem "activestorage-cloudinary-service", "~> 0.2.0"
