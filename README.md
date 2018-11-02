@@ -105,19 +105,19 @@ Q.19 Provide our database schema design
 
 #Wireframes
 
-![Wire_Frames_1](./Download/BrisBand_Wireframes.JPG)
+![Wire_Frames_1](C:\Users\chris\Downloads/BrisBand_Wireframes.pdf)
 
 
-![Wire_Frames_1](./Picture/Wire_frames1_Brisband.JPG)
-![Wire_Frames_2](./Picture/Wire_frames2_Brisband.JPG)
-![Wire_Frames_3](./Picture/Wire_frames3_Brisband.JPG)
-![Wire_Frames_4](./Picture/Wire_frames4_Brisband.JPG)
+![Wire_Frames_1](./Picture/Wire_frames1_Brisband.jpeg)
+![Wire_Frames_2](./Picture/Wire_frames2_Brisband.jpeg)
+![Wire_Frames_3](./Picture/Wire_frames3_Brisband.jpeg)
+![Wire_Frames_4](./Picture/Wire_frames4_Brisband.jpeg)
 
 
 
 
 #Site map
-![Site_map_Brisband](./Picture/Site_map_Brisband.JPG)
+![Site_map_Brisband](./Picture/Site_map_Brisband.jpeg)
 
 
 
