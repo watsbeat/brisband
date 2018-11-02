@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    session[:item_id] = params[:id]
   end
 
   # GET /items/new
