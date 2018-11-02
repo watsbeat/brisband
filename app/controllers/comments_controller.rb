@@ -19,9 +19,6 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
-    # render partial:'comments/form', locals: {comment: @comment, item: Item.find(@comment.item_id)}
-    @back_url = session[:my_previous_url]
-
   end
 
   # POST /comments
