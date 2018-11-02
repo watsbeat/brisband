@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   
-# Test that items can be created when give the correct parameters
+# Test that items can be created when given the correct parameters
   it "creates new items with correct fields" do
     item = Item.create(user_id:1, brand:"FooBrand", model:"FooModel", description:"FooDescription", price:100, for_sale:true)
     expect(item.user_id).to eq(1)
