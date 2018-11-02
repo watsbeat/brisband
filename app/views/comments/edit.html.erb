@@ -1,6 +1,6 @@
 <h1>Editing Comment</h1>
 
-<%= render 'form', comment: @comment %>
-
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+<%= form_for @comment, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
+ <%= f.text_area :description, :value => @comment.description %>
+ <%= f.submit "Update" %>
+<% end %>

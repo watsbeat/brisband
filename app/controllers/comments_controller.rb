@@ -19,6 +19,9 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    # render partial:'comments/form', locals: {comment: @comment, item: Item.find(@comment.item_id)}
+    @back_url = session[:my_previous_url]
+
   end
 
   # POST /comments
@@ -44,13 +47,10 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
-    @comment.item_id = Item.find(params[:item])
-
 
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
+        format.html { redirect_to item_path(Item.find(@comment.item_id)) }
       else
         format.html { render :edit }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
