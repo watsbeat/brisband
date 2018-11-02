@@ -54,7 +54,6 @@ users = User.create([
 
 items = Item.create([
     {
-        id: 1,
         user_id: 1,
         brand: "Ibanez",
         model: "RGA320",
@@ -63,7 +62,6 @@ items = Item.create([
         price: 0.00
     }, 
     {
-        id: 2,
         user_id: 2,
         brand: "Pearl",
         model: "Demon Drive Pedals",
@@ -72,7 +70,6 @@ items = Item.create([
         price: 0.00
     },
     {
-        id: 3,
         user_id: 3,
         brand: "Pearl",
         model: "EXPORT EXL",
@@ -81,7 +78,6 @@ items = Item.create([
         price: 1000.00
     },
     {
-        id: 4,
         user_id: 4,
         brand: "Shure",
         model: "SM-58",
@@ -90,7 +86,6 @@ items = Item.create([
         price: 50.00
     },
     {
-        id: 5,
         user_id: 1,
         brand: "Warwick",
         model: "Thumb NT 1988",
