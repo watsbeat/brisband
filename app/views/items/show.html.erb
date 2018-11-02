@@ -15,10 +15,44 @@
   <%= @item.description %>
 </p>
 
+<% if @item.for_sale %>
+  <p>
+    <strong>For Sale:</strong>
+    <%= @item.price %>
+  </p>
+<% end %>
+
 <p>
-  <strong>Price:</strong>
-  <%= @item.price %>
+  <strong>Belongs To:</strong>
+  <%= link_to @item.user.name, @item.user %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<% if @item.can_edit?(current_user) %>
+  <%= link_to 'Edit', edit_item_path(@item) %> |
+<% end %>
+
+<% if current_user %>
+  <% if @item.can_destroy?(current_user) %>
+    <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
+
+<h4>Comments</h4>
+<% if current_user %>
+  <%# <%= link_to 'Add Comment', new_comment_path(@comment) %> %>
+  <%= render partial:'comments/form', locals: {item: @item} %>
+
+<% end %>
+<% for comment in @item.comments.order(created_at: :desc) %>
+  <p>
+  <strong><%= link_to comment.user.name, comment.user %></strong> says <%= comment.description %>
+  </p>  
+  <p><%=time_ago_in_words comment.created_at%> ago</p>
+  <p>
+    <% if comment.can_edit?(current_user) %>
+      <%# <%= link_to 'Edit Comment', edit_comment_path(comment) %> %>
+      <%# <%= render partial:'comments/form', locals: {item: @item} %> %>
+
+    <% end %>
+  </p>
+<% end %>
