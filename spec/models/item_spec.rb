@@ -4,7 +4,6 @@ RSpec.describe Item, type: :model do
   
 # Test that items can be created when give the correct parameters
   it "creates new items with correct fields" do
-    # User.create(id:1, name:"Alex Apple", email:"alex@gmail.com", encrypted_password:"alexapple", bio:"alexbio", genres:"alexgenres")
     item = Item.create(user_id:1, brand:"FooBrand", model:"FooModel", description:"FooDescription", price:100, for_sale:true)
     expect(item.user_id).to eq(1)
     expect(item.brand).to eq("FooBrand")
