@@ -2,11 +2,16 @@ class Band < ApplicationRecord
     has_and_belongs_to_many :users
 
     def can_edit?(user)
-        self.user == user   
+        self.users.include?(user)
     end
       
     def can_destroy?(user)
-        self.user == user || user.has_role?(:admin) 
+        self.users.include?(user) || user.has_role?(:admin) 
     end
 
+    def remove_user(user)
+        if self.users.include?(user)
+            self.users.delete(user)
+        end
+    end
 end
