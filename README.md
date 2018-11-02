@@ -1,7 +1,6 @@
-ND
-A community-driven social marketplace for musicians in Brisbane
+#Brisband
+ A community-driven social marketplace for musicians in Brisbane
 
-#THE PROBLEM
 
 #THE PROBLEM
 
