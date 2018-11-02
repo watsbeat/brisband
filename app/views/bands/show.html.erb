@@ -50,13 +50,11 @@
   <%= @band.status %>
 </p>
 
-<%# TO BE IMPLIMENTED WHEN BAND AND USERS ARE CONNETED IN DB %>
-<%# <% if current_user %>
-
-  <%# <% if @band.can_edit?(current_user) %> %>
-    <%# <%= link_to 'Edit', edit_band_path(@band) %>    %>
-  <%# <% end %> %>
-  <%# <% if @band.can_destroy?(current_user) %> %>
-    <%# <%= link_to 'Destroy', @band, method: :delete, data: { confirm: 'Are you sure?' } %> %>
-  <%# <% end %> %>
-<%# <% end %> %> %>
+<% if current_user %>
+  <% if @band.can_edit?(current_user) %>
+    <%= link_to 'Edit', edit_band_path(@band) %>
+  <% end %>
+  <% if @band.can_destroy?(current_user) %>
+    <%= link_to 'Destroy', @band, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
