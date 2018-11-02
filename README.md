@@ -1,4 +1,4 @@
-##Brisband
+#Brisband
 
 
 What is BrisBand?  BrisBand is a community-driven marketplace for local Brisbane musicians to discuss and to buy and sell their used equipment. 
