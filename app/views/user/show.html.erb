@@ -3,9 +3,9 @@
 <%= link_to 'Create an Artist Page', new_band_path %>
 <%= link_to 'Add a Gear Post', new_item_path %>
 
-<p>
-<img src="<%= @user.image %>" alt="Mary's Profile Pic">
-</p>
+<% if @user.image.attached? %>
+  <%= cl_image_tag(@user.image.key, :width=>400, :crop=>"fit") %>
+<% end %>
 
 <h1><%= @user.name %></h1>
 

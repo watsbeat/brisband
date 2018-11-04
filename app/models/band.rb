@@ -1,5 +1,6 @@
 class Band < ApplicationRecord
     has_and_belongs_to_many :users
+    has_one_attached :image
 
     def can_edit?(user)
         self.users.include?(user)

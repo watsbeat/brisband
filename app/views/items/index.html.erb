@@ -16,6 +16,11 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td>
+          <% if item.image.attached? %>
+            <%= cl_image_tag(item.image.key, :width=>100, :crop=>"fit") %>
+          <% end %>
+        </td>
         <td><%= item.brand %></td>
         <td><%= item.model %></td>
         <td><%= item.description %></td>
