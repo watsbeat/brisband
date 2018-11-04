@@ -10,6 +10,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  acts_as_messageable
+
+  def mailboxer_email(object)
+    self.email
+  end
+
   def can_edit?(user)
     self.user == user   
   end
