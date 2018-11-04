@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]  
+  before_action :set_comment, only: [:show, :edit, :update ]  
 
   # GET /comments
   # GET /comments.json
@@ -58,11 +58,15 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
+    # IN SOME INSTANCES, THE PARAMS DISPLAY AS SO; 
+    # /item_id.comment_id
+    # IN THOSE CASES, BELOW PARAMS REQUEST NEEDS TO BE; params[:format]
+    # IT MAY BE TO DO WITH SEEDING
+    @comment = Comment.find(params[:id])
     @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to item_path(Item.find(@comment.item_id))
+
   end
 
   private

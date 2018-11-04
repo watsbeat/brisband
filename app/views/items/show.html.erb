@@ -58,12 +58,14 @@
     <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
-<br><br>
+<br>
+<br>
 <div>
 <% if current_user %>
   <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
 <% end %>
 </div>
+
 <h4>Comments:</h4>
 
 <% for comment in @item.comments.order(created_at: :desc) %>
@@ -79,9 +81,8 @@
   </li>
   <li>
   <% if comment.can_destroy?(current_user) %>
-  <%# delete comment is trying to delete item.... %>
-    <%= link_to 'Destroy', @comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
+   <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+   <% end %>
   </li>
   </ul>
 <% end %>
