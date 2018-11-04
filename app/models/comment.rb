@@ -9,5 +9,4 @@ class Comment < ApplicationRecord
     def can_destroy?(user)
         self.user == user || user.has_role?(:admin) 
     end
-
 end
