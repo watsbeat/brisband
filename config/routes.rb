@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   
   resources :conversations do
     resources :messages
+
+    collection do
+      get :inbox
+      get :all, action: :index
+      get :sent
+      get :trash
+    end
   end
 
   get 'user/:id', to: 'user#show', as: 'user'
