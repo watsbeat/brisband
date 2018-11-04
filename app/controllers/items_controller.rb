@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
+    @item.image.attach(item_params[:image])
 
     respond_to do |format|
       if @item.save
@@ -72,7 +73,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:brand, :model, :description, :price, :for_sale)
+      params.require(:item).permit(:brand, :model, :description, :price, :for_sale, :image)
     end
 
     def check_permissions

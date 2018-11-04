@@ -1,6 +1,10 @@
 
 <p id="notice"><%= notice %></p>
 
+<% if @item.image.attached? %>
+  <%= cl_image_tag(@item.image.key, :width=>400, :crop=>"fit") %>
+<% end %>
+
 <p>
   <strong>Brand:</strong>
   <%= @item.brand %>
@@ -46,7 +50,12 @@
 
 <p>
   <strong>Belongs To:</strong>
-  <%= link_to @item.user.name, @item.user %>
+  <%= link_to @item.user.name, @item.user %> | 
+  <% if current_user %>
+    <%= link_to "Send them a message", new_conversation_path %>
+  <% else %>
+    <p>Sign in to send a message</p>
+  <% end %>
 </p>
 
 <% if @item.can_edit?(current_user) %>
@@ -58,12 +67,14 @@
     <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
-<br><br>
+<br>
+<br>
 <div>
 <% if current_user %>
   <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
 <% end %>
 </div>
+
 <h4>Comments:</h4>
 
 <% for comment in @item.comments.order(created_at: :desc) %>
@@ -79,9 +90,8 @@
   </li>
   <li>
   <% if comment.can_destroy?(current_user) %>
-  <%# delete comment is trying to delete item.... %>
-    <%= link_to 'Destroy', @comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
+   <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+   <% end %>
   </li>
   </ul>
 <% end %>

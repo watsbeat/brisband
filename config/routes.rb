@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :bands, :comments, :items, :charges
+  resources :bands, :comments, :items, :charges, :messages
+  
+  resources :conversations do
+    resources :messages
+  end
+
   get 'user/:id', to: 'user#show', as: 'user'
   devise_for :users
   get 'home/index'

@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if @band.image.attached? %>
+  <%= cl_image_tag(@band.image.key, :width=>400, :crop=>"fit") %>
+<% end %>
+
 <p>
   <strong>Name:</strong>
   <%= @band.name %>
