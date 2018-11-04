@@ -16,6 +16,11 @@
   <tbody>
     <% @bands.each do |band| %>
       <tr>
+        <td>
+          <% if band.image.attached? %>
+            <%= cl_image_tag(band.image.key, :width=>100, :crop=>"fit") %>
+          <% end %>
+        </td>
         <td><%= band.name %></td>
         <td><%= band.bio %></td>
         <td><%= band.genre %></td>

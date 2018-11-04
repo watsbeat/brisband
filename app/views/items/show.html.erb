@@ -1,6 +1,10 @@
 
 <p id="notice"><%= notice %></p>
 
+<% if @item.image.attached? %>
+  <%= cl_image_tag(@item.image.key, :width=>400, :crop=>"fit") %>
+<% end %>
+
 <p>
   <strong>Brand:</strong>
   <%= @item.brand %>

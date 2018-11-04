@@ -27,6 +27,8 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(band_params)
 
+    @band.image.attach(band_params[:image])
+
     respond_to do |format|
       if @band.save
         format.html { redirect_to @band, notice: 'Band was successfully created.' }
@@ -70,6 +72,6 @@ class BandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def band_params
-      params.require(:band).permit(:name, :bio, :genre, :status, user_ids:[])
+      params.require(:band).permit(:name, :bio, :genre, :status, :image, user_ids:[])
     end
 end
