@@ -91,7 +91,7 @@
   <li>
   <% if comment.can_destroy?(current_user) %>
    <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-   <% end %>
+  <% end %>
   </li>
   </ul>
 <% end %>
