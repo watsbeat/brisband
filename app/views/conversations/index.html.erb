@@ -1,0 +1,24 @@
+<h1>All Conversations</h1>
+
+<hr />
+
+<%= link_to 'Inbox', inbox_conversations_path %> (<%= current_user.mailbox.inbox.unread(current_user).count %>) | 
+<%= link_to 'Sent', sent_conversations_path %> (<%= current_user.mailbox.sentbox.count %>) |
+<%= link_to 'Trash', trash_conversations_path %> (<%= current_user.mailbox.trash.count %>) |
+<%= link_to 'All', all_conversations_path %> (<%= current_user.mailbox.conversations.count %>)
+
+
+<hr />
+
+<% for conversation in @conversations %>
+    <div>
+        <% if conversation.is_unread?(current_user) %>
+            <strong><%= link_to conversation.subject, conversation_path(conversation) %></strong> |
+        <% else %>
+            <%= link_to conversation.subject, conversation_path(conversation) %> |
+        <% end %>
+        <%= link_to 'Delete', conversation_path(conversation.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+<% end %>
+
+<%= link_to "New Conversation", new_conversation_path %>

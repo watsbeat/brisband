@@ -50,7 +50,12 @@
 
 <p>
   <strong>Belongs To:</strong>
-  <%= link_to @item.user.name, @item.user %>
+  <%= link_to @item.user.name, @item.user %> | 
+  <% if current_user %>
+    <%= link_to "Send them a message", new_conversation_path %>
+  <% else %>
+    <p>Sign in to send a message</p>
+  <% end %>
 </p>
 
 <% if @item.can_edit?(current_user) %>
@@ -86,7 +91,7 @@
   <li>
   <% if comment.can_destroy?(current_user) %>
    <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-   <% end %>
+  <% end %>
   </li>
   </ul>
 <% end %>
