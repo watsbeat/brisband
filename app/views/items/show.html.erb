@@ -83,15 +83,15 @@
   </p>  
   <p><%=time_ago_in_words comment.created_at%> ago</p>
   <ul>
-  <li>
     <% if comment.can_edit?(current_user) %>
-      <%= link_to 'Edit', edit_comment_path(comment) %>
+      <li>
+        <%= link_to 'Edit', edit_comment_path(comment) %>
+      </li>
     <% end %>
-  </li>
-  <li>
-  <% if comment.can_destroy?(current_user) %>
-   <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if comment.can_destroy?(current_user, @item) %>
+    <li>
+      <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
   <% end %>
-  </li>
   </ul>
 <% end %>

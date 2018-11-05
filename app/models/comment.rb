@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
         self.user == user   
     end
       
-    def can_destroy?(user)
-        self.user == user || user.has_role?(:admin) 
+    def can_destroy?(user, item)
+        self.user == user || user.has_role?(:admin) || item.user == user
     end
 end
