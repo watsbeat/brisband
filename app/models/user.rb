@@ -17,10 +17,10 @@ class User < ApplicationRecord
   end
 
   def can_edit?(user)
-    self.user == user   
+    self == user   
   end
   
   def can_destroy?(user)
-    self.user == user || user.has_role?(:admin) 
+    self == user || user.has_role?(:admin) 
   end
 end
