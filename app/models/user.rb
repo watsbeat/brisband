@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   rolify
+  after_create :assign_basic_role
   has_and_belongs_to_many :bands
   has_many :comments
   has_many :items
@@ -11,6 +12,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   acts_as_messageable
+
+  def assign_basic_role
+    self.add_role(:basic) if self.roles.blank?
+  end
 
   def mailboxer_email(object)
     self.email

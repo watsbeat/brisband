@@ -42,11 +42,12 @@ users = User.create([
         password: "owenorange",
         name: "Owen Orange",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
-        genres: "Blues, Alternative" 
+        genres: "Blues, Alternative"
     }
 ])
 
 seed_users=User.all
+seed_users[4].add_role(:admin)
 
 items = Item.create([
     {
