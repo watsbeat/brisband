@@ -10,7 +10,6 @@ User.destroy_all
 # Create seeds for items, users and bands.
 users = User.create([
     {
-        id: 1,
         email: "bruce@gmail.com",
         password: "bruceblue",
         name: "Bruce Blue",
@@ -18,7 +17,6 @@ users = User.create([
         genres: "Rock, Punk"
     }, 
     {
-        id: 2,
         email: "mary@gmail.com",
         password: "marymauve",
         name: "Mary Mauve",
@@ -26,7 +24,6 @@ users = User.create([
         genres: "Indie, Pop" 
     },
     {
-        id: 3,
         email: "lars@gmail.com",
         password: "larslavender",
         name: "Lars Lavender",
@@ -34,7 +31,6 @@ users = User.create([
         genres: "Heavy Metal" 
     },
     {
-        id: 4,
         email: "georgia@gmail.com",
         password: "georgiagreen",
         name: "Georgia Green",
@@ -42,7 +38,6 @@ users = User.create([
         genres: "Folk" 
     },
     {
-        id: 5,
         email: "owen@gmail.com",
         password: "owenorange",
         name: "Owen Orange",
@@ -51,9 +46,13 @@ users = User.create([
     }
 ])
 
+seed_users=User.all
+# p seed_users
+p seed_users[1].id
+
 items = Item.create([
     {
-        user_id: 1,
+        user_id: seed_users[1].id,
         brand: "Ibanez",
         model: "RGA320",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
@@ -61,7 +60,7 @@ items = Item.create([
         price: 0.00
     }, 
     {
-        user_id: 2,
+        user_id: seed_users[2].id,
         brand: "Pearl",
         model: "Demon Drive Pedals",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
@@ -69,7 +68,7 @@ items = Item.create([
         price: 0.00
     },
     {
-        user_id: 3,
+        user_id: seed_users[3].id,
         brand: "Pearl",
         model: "EXPORT EXL",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
@@ -77,7 +76,7 @@ items = Item.create([
         price: 1000.00
     },
     {
-        user_id: 4,
+        user_id: seed_users[4].id,
         brand: "Shure",
         model: "SM-58",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
@@ -85,7 +84,7 @@ items = Item.create([
         price: 50.00
     },
     {
-        user_id: 1,
+        user_id: seed_users[1].id,
         brand: "Warwick",
         model: "Thumb NT 1988",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
@@ -94,89 +93,86 @@ items = Item.create([
     }
 ])
 
+seed_items = Item.all
+
 comments = Comment.create([
     {
         description: "I love Ibanez.",
-        user_id: 1,
-        item_id: 1
+        user_id: seed_users[1].id,
+        item_id: seed_items[1].id
     },
     {
         description: "Shure mic's are the sure way to go!",
-        user_id: 2,
-        item_id: 4
+        user_id: seed_users[2].id,
+        item_id: seed_items[4].id
     },
     {
         description: "Pearl makes me pearl!",
-        user_id: 3,
-        item_id: 3
+        user_id: seed_users[3].id,
+        item_id: seed_items[3].id
     },
     {
         description: "Remeber Warwick Cappa?",
-        user_id: 4,
-        item_id: 5
+        user_id: seed_users[4].id,
+        item_id: seed_items[0].id
     },
     {
         description: "Ibanabanez. LOL!",
-        user_id: 5,
-        item_id: 1
+        user_id: seed_users[0].id,
+        item_id: seed_items[1].id
     },
     {
         description: "Shurely you've got to be kidding!",
-        user_id: 1,
-        item_id: 4
+        user_id: seed_users[1].id,
+        item_id: seed_items[4].id
     },
     {
         description: "I had one of these as my first drumkit!",
-        user_id: 2,
-        item_id: 3
+        user_id: seed_users[2].id,
+        item_id: seed_items[3].id
     },
     {
         description: "Or Warwick Davies?",
-        user_id: 3,
-        item_id: 5
+        user_id: seed_users[3].id,
+        item_id: seed_items[0].id
     }
 ])
 
 bands = Band.create([
     {
-        id: 1,
         name: "Apple Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Punk",
         status: true,
-        users: [User.find(1), User.find(4), User.find(5)]
+        users: [seed_users[1], seed_users[4], seed_users[0]]
     },
     {
-        id: 2,
         name: "Blueberry Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Blues, Alternative",
         status: true,
-        users: [User.find(2), User.find(3), User.find(4)]
+        users: [seed_users[2], seed_users[3], seed_users[4]]
     },
     {
-        id: 3,
         name: "Banana Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Rock",
         status: false,
-        users: [User.find(3), User.find(4), User.find(5)]
+        users: [seed_users[3], seed_users[4], seed_users[0]]
     },
     {
-        id: 4,
         name: "Strawberry Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Indie, Pop",
         status: true,
-        users: [User.find(1), User.find(2), User.find(3)]
+        users: [seed_users[1], seed_users[2], seed_users[3]]
     },
     {
-        id: 5,
         name: "Mango Band",
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dapibus elit. Aenean sed nunc volutpat, vulputate metus sed, interdum nisi. Morbi efficitur, augue et tincidunt iaculis, ligula lorem pellentesque metus, consequat euismod lectus tellus in neque. Maecenas fringilla efficitur mi ac porta. Vestibulum id orci tortor. Fusce cursus, leo.",
         genre: "Heavy Metal",
         status: false,
-        users: [User.find(2), User.find(3), User.find(5)]
+        users: [seed_users[2], seed_users[3], seed_users[0]]
     }
 ])
 
