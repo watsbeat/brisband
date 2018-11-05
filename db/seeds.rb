@@ -47,8 +47,6 @@ users = User.create([
 ])
 
 seed_users=User.all
-# p seed_users
-p seed_users[1].id
 
 items = Item.create([
     {
