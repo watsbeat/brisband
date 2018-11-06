@@ -18,8 +18,15 @@ Rails.application.routes.draw do
       delete :delete_image_attachment
     end
   end
-  
 
+  resources :comments, :items do
+    member do
+      post :flag
+      post :unflag
+    end
+  end
+  
+  get 'home/admin', to: 'home#admin', as: 'admin'
   get 'user/:id', to: 'user#show', as: 'user'
   devise_for :users
   get 'home/guidelines'

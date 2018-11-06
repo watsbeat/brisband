@@ -66,22 +66,20 @@
     <p>Sign in to send a message</p>
   <% end %>
 </p>
-
-<% if @item.can_edit?(current_user) %>
-  <%= link_to 'Edit', edit_item_path(@item) %> |
-<% end %>
-
 <% if current_user %>
+  <% if @item.can_edit?(current_user) %>
+    <%= link_to 'Edit', edit_item_path(@item) %> |
+  <% end %>
   <% if @item.can_destroy?(current_user) %>
     <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
+  <%= link_to 'Flag Item', flag_item_path(@item.id), method: 'post' %>
+  <br>
+  <div>
+    <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
+  </div>
 <% end %>
-<br>
-<div>
-<% if current_user %>
-  <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
-<% end %>
-</div>
+
 
 <h4>Comments:</h4>
 
@@ -97,5 +95,6 @@
       <% if comment.can_destroy?(current_user, @item) %>
           | <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
+      <%= link_to 'Flag Comment', flag_comment_path(comment.id), method: 'post' %>
     <% end %>
 <% end %>

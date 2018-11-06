@@ -77,6 +77,22 @@ class ItemsController < ApplicationController
     redirect_to item_url(@item.id)
   end
 
+  def flag
+    item = Item.find(params[:id])
+    item.flagged = true
+    item.save
+
+    redirect_to items_path
+  end
+
+  def unflag
+    item = Item.find(params[:id])
+    item.flagged = false
+    item.save
+
+    redirect_to admin_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item

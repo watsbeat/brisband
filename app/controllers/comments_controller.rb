@@ -69,6 +69,22 @@ class CommentsController < ApplicationController
 
   end
 
+  def flag
+    comment = Comment.find(params[:id])
+    comment.flagged = true
+    comment.save
+
+    redirect_to item_path(comment.item_id)
+  end
+
+  def unflag
+    comment = Comment.find(params[:id])
+    comment.flagged = false
+    comment.save
+
+    redirect_to admin_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment

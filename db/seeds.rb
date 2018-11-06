@@ -98,42 +98,50 @@ comments = Comment.create([
     {
         description: "I love Ibanez.",
         user_id: seed_users[1].id,
-        item_id: seed_items[1].id
+        item_id: seed_items[1].id,
+        flagged: false
     },
     {
         description: "Shure mic's are the sure way to go!",
         user_id: seed_users[2].id,
-        item_id: seed_items[4].id
+        item_id: seed_items[4].id,
+        flagged: false
     },
     {
         description: "Pearl makes me pearl!",
         user_id: seed_users[3].id,
-        item_id: seed_items[3].id
+        item_id: seed_items[3].id,
+        flagged: false
     },
     {
         description: "Remeber Warwick Cappa?",
         user_id: seed_users[4].id,
-        item_id: seed_items[0].id
+        item_id: seed_items[0].id,
+        flagged: false
     },
     {
         description: "Ibanabanez. LOL!",
         user_id: seed_users[0].id,
-        item_id: seed_items[1].id
+        item_id: seed_items[1].id,
+        flagged: false
     },
     {
         description: "Shurely you've got to be kidding!",
         user_id: seed_users[1].id,
-        item_id: seed_items[4].id
+        item_id: seed_items[4].id,
+        flagged: false
     },
     {
         description: "I had one of these as my first drumkit!",
         user_id: seed_users[2].id,
-        item_id: seed_items[3].id
+        item_id: seed_items[3].id,
+        flagged: false
     },
     {
         description: "Or Warwick Davies?",
         user_id: seed_users[3].id,
-        item_id: seed_items[0].id
+        item_id: seed_items[0].id,
+        flagged: true
     }
 ])
 

@@ -4,6 +4,9 @@
   <% if @user.can_edit?(current_user) %>
     <%= link_to 'Account Settings', edit_user_registration_path %> 
   <% end %>
+  <% if @user.has_role?(:admin) %>
+    <%= link_to 'Admin View', admin_path %> 
+  <% end %>
 <% end %>
 
 <% if @user.image.attached? %>
