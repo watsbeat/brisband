@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purge_image]
 
   # GET /items
   # GET /items.json
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
-    @item.image.attach(item_params[:image])
+    @item.images.attach(params[:item][:images])
 
     respond_to do |format|
       if @item.save
@@ -46,6 +46,7 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
+        @item.images.attach(params[:item][:images])
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
@@ -65,6 +66,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def delete_image_attachment
+    imageblob = ActiveStorage::Blob.find_signed(params[:id])
+    blob_id = imageblob.id
+    imageattachment = ActiveStorage::Attachment.find_by(blob_id: blob_id)
+
+    if imageattachment != nil && imageattachment.purge
+      imageblob.purge
+    end
+    redirect_to item_url(@item.id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
@@ -73,7 +85,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:brand, :model, :description, :price, :for_sale, :image)
+      params.require(:item).permit(:brand, :model, :description, :price, :for_sale, :images)
     end
 
     def check_permissions

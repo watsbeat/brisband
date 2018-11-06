@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Create an Artist Page', new_band_path %>
-<%= link_to 'Add a Gear Post', new_item_path %>
+<% if current_user %>
+  <% if @user.can_edit?(current_user) %>
+    <%= link_to 'Account Settings', edit_user_registration_path %> 
+  <% end %>
+<% end %>
 
 <% if @user.image.attached? %>
   <%= cl_image_tag(@user.image.key, :width=>400, :crop=>"fit") %>
@@ -19,14 +22,18 @@
   <%= @user.genres %>
 </p>
 
-<strong>Bands:</strong>
+<h2>Bands</h2>
 <ul>
   <% for band in @user.bands %>
     <li><%= link_to band.name, band %></li>
   <% end %>
 </ul>
-
-<h2>Items</h2>
+<% if current_user %>
+  <% if @user.can_edit?(current_user) %>
+    <%= link_to 'Create an Artist Page', new_band_path %>
+  <% end %>
+<% end %>
+<h2>Gear</h2>
 <% for item in @user.items %>
   <p>
     <strong>Brand:</strong>
@@ -50,4 +57,9 @@
     </p>
   <% end %>
   <%= link_to 'Show', item %>
+<% end %>
+<% if current_user %>
+  <% if @user.can_edit?(current_user) %>
+    <%= link_to 'Add a Gear Post', new_item_path %>
+  <% end %>
 <% end %>

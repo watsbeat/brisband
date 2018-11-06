@@ -13,6 +13,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :bands, :items do
+    member do
+      delete :delete_image_attachment
+    end
+  end
+  
+
   get 'user/:id', to: 'user#show', as: 'user'
   devise_for :users
   get 'home/guidelines'

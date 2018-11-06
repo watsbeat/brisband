@@ -26,8 +26,7 @@ class BandsController < ApplicationController
   # POST /bands.json
   def create
     @band = Band.new(band_params)
-
-    @band.image.attach(band_params[:image])
+    @band.images.attach(params[:band][:images])
 
     respond_to do |format|
       if @band.save
@@ -45,6 +44,7 @@ class BandsController < ApplicationController
   def update
     respond_to do |format|
       if @band.update(band_params)
+        @band.images.attach(params[:band][:images])
         format.html { redirect_to @band, notice: 'Band was successfully updated.' }
         format.json { render :show, status: :ok, location: @band }
       else
@@ -64,6 +64,17 @@ class BandsController < ApplicationController
     end
   end
 
+  def delete_image_attachment
+    imageblob = ActiveStorage::Blob.find_signed(params[:id])
+    blob_id = imageblob.id
+    imageattachment = ActiveStorage::Attachment.find_by(blob_id: blob_id)
+
+    if imageattachment != nil && imageattachment.purge
+      imageblob.purge
+    end
+    redirect_to band_url(@band.id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_band
@@ -72,6 +83,6 @@ class BandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def band_params
-      params.require(:band).permit(:name, :bio, :genre, :status, :image, user_ids:[])
+      params.require(:band).permit(:name, :bio, :genre, :status, :images, user_ids:[])
     end
 end

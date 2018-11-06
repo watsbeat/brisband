@@ -1,8 +1,17 @@
 
 <p id="notice"><%= notice %></p>
 
-<% if @item.image.attached? %>
-  <%= cl_image_tag(@item.image.key, :width=>400, :crop=>"fit") %>
+<% if @item.images.attached? %>
+  <% for image in @item.images %>
+    <%= cl_image_tag(image.key, :width=>400, :crop=>"fit") %>
+    <% if current_user %>
+      <% if @item.can_destroy?(current_user) %>
+        <%= link_to 'Remove', delete_image_attachment_item_url(image.signed_id),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
 
 <p>
@@ -68,7 +77,6 @@
   <% end %>
 <% end %>
 <br>
-<br>
 <div>
 <% if current_user %>
   <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
@@ -82,16 +90,12 @@
   <strong><%= link_to comment.user.name, comment.user %></strong> says <%= comment.description %>
   </p>  
   <p><%=time_ago_in_words comment.created_at%> ago</p>
-  <ul>
-  <li>
-    <% if comment.can_edit?(current_user) %>
-      <%= link_to 'Edit', edit_comment_path(comment) %>
+    <% if current_user %>
+      <% if comment.can_edit?(current_user) %>
+          <%= link_to 'Edit', edit_comment_path(comment) %>
+      <% end %>
+      <% if comment.can_destroy?(current_user, @item) %>
+          | <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     <% end %>
-  </li>
-  <li>
-  <% if comment.can_destroy?(current_user) %>
-   <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  </li>
-  </ul>
 <% end %>

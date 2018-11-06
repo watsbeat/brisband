@@ -1,7 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<% if @band.image.attached? %>
-  <%= cl_image_tag(@band.image.key, :width=>400, :crop=>"fit") %>
+<% if @band.images.attached? %>
+  <% for image in @band.images %>
+    <%= cl_image_tag(image.key, :width=>400, :crop=>"fit") %>
+    <% if current_user %>
+      <% if @band.can_destroy?(current_user) %>
+        <%= link_to 'Remove', delete_image_attachment_band_url(image.signed_id),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
 
 <p>
@@ -17,6 +26,15 @@
 <p>
   <strong>Genre:</strong>
   <%= @band.genre %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <% if @band.status == true %>
+    Active
+  <% else %>
+    Not Active
+  <% end %>
 </p>
 
 <strong>Members:</strong>
@@ -49,16 +67,11 @@
   <% end %>
 </ul>
 
-<p>
-  <strong>Status:</strong>
-  <%= @band.status %>
-</p>
-
 <% if current_user %>
   <% if @band.can_edit?(current_user) %>
     <%= link_to 'Edit', edit_band_path(@band) %>
   <% end %>
   <% if @band.can_destroy?(current_user) %>
-    <%= link_to 'Destroy', @band, method: :delete, data: { confirm: 'Are you sure?' } %>
+    | <%= link_to 'Delete', @band, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>

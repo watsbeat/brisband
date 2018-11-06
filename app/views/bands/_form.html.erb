@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %><br>
   </div>
 
   <div class="field">
@@ -38,12 +38,7 @@
 
   <div class="field">
     <%= form.label :Band_Members %>
-    <%= form.collection_check_boxes(:user_ids, band.users, :id, :name) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Add_Member %>
-    <%= form.collection_check_boxes(:user_ids, User.all, :id, :name) %>
+    <%= form.collection_select :user_ids, User.all, :id, :name, {}, { :multiple => true } %>
   </div>
 
   <div class="actions">
