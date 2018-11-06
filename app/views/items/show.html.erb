@@ -63,7 +63,7 @@
   <% if current_user %>
     <%= link_to "Send them a message", new_conversation_path %>
   <% else %>
-    <p>Sign in to send a message</p>
+    Sign in to send a message 
   <% end %>
 </p>
 
@@ -80,10 +80,13 @@
 <div>
 <% if current_user %>
   <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
+<% else %>
+  Sign in to add comments
 <% end %>
 </div>
 
 <h4>Comments:</h4>
+
 
 <% for comment in @item.comments.order(created_at: :desc) %>
   <p>
