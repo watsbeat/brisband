@@ -1,0 +1,16 @@
+<% if current_user && current_user.has_role?(:admin) %>
+    <h2>Comments</h2>
+        <% for comment in @flagged_comments %>
+            <p><%= link_to comment.description, comment_path(comment) %></p>
+            <%= link_to 'Unflag Comment', unflag_comment_path(comment.id), method: 'post' %>
+            <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    <h2>Items</h2>
+        <% for item in @flagged_items %>
+            <p><%= link_to item.description, item_path(item) %></p>
+            <%= link_to 'Unflag Item', unflag_item_path(item.id), method: 'post' %>
+            <%= link_to 'Delete', item_path(item.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+<% else %>
+    <%= redirect_to root_path %>
+<% end %>
