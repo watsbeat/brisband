@@ -68,7 +68,6 @@
   <% end %>
 <% end %>
 <br>
-<br>
 <div>
 <% if current_user %>
   <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
@@ -82,18 +81,12 @@
   <strong><%= link_to comment.user.name, comment.user %></strong> says <%= comment.description %>
   </p>  
   <p><%=time_ago_in_words comment.created_at%> ago</p>
-  <ul>
     <% if current_user %>
       <% if comment.can_edit?(current_user) %>
-        <li>
           <%= link_to 'Edit', edit_comment_path(comment) %>
-        </li>
       <% end %>
       <% if comment.can_destroy?(current_user, @item) %>
-        <li>
-          <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </li>
+          | <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     <% end %>
-  </ul>
 <% end %>

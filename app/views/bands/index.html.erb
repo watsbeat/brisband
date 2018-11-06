@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+    <%= form_tag(bands_path) do %>
+        Search <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag 'Search' %>
+    <% end %>
+
 <h1>Artists</h1>
 
 <table>
@@ -24,7 +29,13 @@
         <td><%= band.name %></td>
         <td><%= band.bio %></td>
         <td><%= band.genre %></td>
-        <td><%= band.status %></td>
+        <td>
+            <% if band.status == true %>
+                Active
+            <% else %>
+                Not Active
+            <% end %>
+        </td>
         <td><%= link_to 'Show', band %></td>
       </tr>
     <% end %>
