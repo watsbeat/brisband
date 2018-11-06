@@ -1,10 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-    <%= form_tag(bands_path) do %>
-        Search <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag 'Search' %>
-    <% end %>
-
 <h1>Artists</h1>
 
 <table>
@@ -24,7 +19,7 @@
       <tr>
         <td>
           <% if band.images.attached? %>
-            <%# <%= cl_image_tag(band.images.first.key, :width=>100, :crop=>"fit") %> %>
+            <%= cl_image_tag(band.images[0].key, :width=>100, :crop=>"fit") %>
           <% end %>
         </td>
         <td><%= band.name %></td>
