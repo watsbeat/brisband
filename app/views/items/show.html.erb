@@ -1,8 +1,17 @@
 
 <p id="notice"><%= notice %></p>
 
-<% if @item.image.attached? %>
-  <%= cl_image_tag(@item.image.key, :width=>400, :crop=>"fit") %>
+<% if @item.images.attached? %>
+  <% for image in @item.images %>
+    <%= cl_image_tag(image.key, :width=>400, :crop=>"fit") %>
+    <% if current_user %>
+      <% if @item.can_destroy?(current_user) %>
+        <%= link_to 'Remove', delete_image_attachment_item_url(image.signed_id),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
 
 <p>

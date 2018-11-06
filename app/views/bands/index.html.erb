@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Bio</th>
       <th>Genre</th>
@@ -17,8 +18,8 @@
     <% @bands.each do |band| %>
       <tr>
         <td>
-          <% if band.image.attached? %>
-            <%= cl_image_tag(band.image.key, :width=>100, :crop=>"fit") %>
+          <% if band.images.attached? %>
+            <%# <%= cl_image_tag(band.images.first.key, :width=>100, :crop=>"fit") %> %>
           <% end %>
         </td>
         <td><%= band.name %></td>
