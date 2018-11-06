@@ -1,10 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <% if current_user %>
-<%= link_to 'Conversations', inbox_conversations_path %> 
-    <% if current_user.mailbox.inbox.unread(current_user).count > 0 %>
-        You Have Unread <%= current_user.mailbox.inbox.unread(current_user).count %> Messages 
-    <% end %> |
   <% if @user.can_edit?(current_user) %>
     <%= link_to 'Account Settings', edit_user_registration_path %> 
   <% end %>

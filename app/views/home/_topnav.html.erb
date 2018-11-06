@@ -1,12 +1,17 @@
 <%# Links to navigate site (top navbar)     %>
 <p>
     <%= link_to 'Home', home_index_path %> |
-    <%= link_to 'Community Guidelines', home_guidelines_path %> |
     <% if user_signed_in? %>
     <%= link_to 'Profile', current_user %> |
+    <%= link_to 'Conversations', inbox_conversations_path %> 
+    <% if current_user.mailbox.inbox.unread(current_user).count > 0 %>
+        <strong>You Have <%= current_user.mailbox.inbox.unread(current_user).count %> Unread Messages </strong>
+    <% end %> |
+    <%= link_to 'Community Guidelines', home_guidelines_path %> |
     <%= link_to 'Log out', destroy_user_session_path, method: :delete %> |
     Logged in as <%= current_user.name %>
     <% else %>
+    <%= link_to 'Community Guidelines', home_guidelines_path %> |
     <%= link_to 'Sign up', new_user_registration_path %> |
     <%= link_to 'Log in', new_user_session_path %>
     <% end %>
