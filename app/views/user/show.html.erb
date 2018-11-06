@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<% if current_user %>
+<%= link_to 'Conversations', inbox_conversations_path %> 
+    <% if current_user.mailbox.inbox.unread(current_user).count > 0 %>
+        You Have Unread <%= current_user.mailbox.inbox.unread(current_user).count %> Messages 
+    <% end %> |
+  <% if @user.can_edit?(current_user) %>
+    <%= link_to 'Account Settings', edit_user_registration_path %> 
+  <% end %>
+<% end %>
+
 <% if @user.image.attached? %>
   <%= cl_image_tag(@user.image.key, :width=>400, :crop=>"fit") %>
 <% end %>
@@ -15,17 +25,6 @@
   <strong>Genres:</strong>
   <%= @user.genres %>
 </p>
-
-<% if current_user %>
-  <% if @user.can_edit?(current_user) %>
-    <%= link_to 'Edit Profile', edit_user_registration_path %> | 
-  <% end %>
-  <% if @user.can_destroy?(current_user) %>
-    <%= link_to 'Settings', edit_user_registration_path %>
-  <% end %>
-<% end %>
-
-<br/><br/>
 
 <h2>Bands</h2>
 <ul>

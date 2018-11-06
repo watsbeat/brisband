@@ -20,4 +20,11 @@ class Item < ApplicationRecord
         self.user_id = user.id
         self.save
     end
+    def self.search(search)
+        if search
+            where(["name LIKE ?", "%#{search}%"])
+        else
+            all
+        end
+    end
 end

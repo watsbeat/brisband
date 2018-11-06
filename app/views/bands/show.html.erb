@@ -19,6 +19,15 @@
   <%= @band.genre %>
 </p>
 
+<p>
+  <strong>Status:</strong>
+  <% if @band.status == true %>
+    Active
+  <% else %>
+    Not Active
+  <% end %>
+</p>
+
 <strong>Members:</strong>
 <ul>
   <% for user in @band.users %>
@@ -49,16 +58,11 @@
   <% end %>
 </ul>
 
-<p>
-  <strong>Status:</strong>
-  <%= @band.status %>
-</p>
-
 <% if current_user %>
   <% if @band.can_edit?(current_user) %>
     <%= link_to 'Edit', edit_band_path(@band) %>
   <% end %>
   <% if @band.can_destroy?(current_user) %>
-    <%= link_to 'Destroy', @band, method: :delete, data: { confirm: 'Are you sure?' } %>
+    | <%= link_to 'Delete', @band, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
