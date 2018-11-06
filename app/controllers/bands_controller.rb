@@ -72,7 +72,7 @@ class BandsController < ApplicationController
     if imageattachment != nil && imageattachment.purge
       imageblob.purge
     end
-    redirect_to bands_url
+    redirect_to band_url(@band.id)
   end
 
   private

@@ -59,9 +59,6 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    for comment in @item.comments
-      comment.destroy
-    end
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
@@ -77,7 +74,7 @@ class ItemsController < ApplicationController
     if imageattachment != nil && imageattachment.purge
       imageblob.purge
     end
-    redirect_to items_url
+    redirect_to item_url(@item.id)
   end
 
   private
