@@ -27,11 +27,11 @@ class ConversationsController < ApplicationController
 
     def new
         @conversation = Mailboxer::Conversation.new
-        @recipients = User.all - [current_user]
+        @recipient = User.find(params[:recipient])
     end
 
     def create
-        recipient = User.find(params[:user_id])
+        recipient = User.find(params[:recipient])
         receipt = current_user.send_message(recipient, params[:body], params[:subject])
         redirect_to conversation_path(receipt.conversation)
     end
