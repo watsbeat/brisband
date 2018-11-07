@@ -4,7 +4,7 @@
         <% if @item.images.attached? %>
             <div class="carousel">
                 <% for image in @item.images %>
-                    <a class="carousel-item" href="#one!"><%= cl_image_tag(image.key) %></a>
+                    <div class="carousel-item"><%= cl_image_tag(image.key) %></div>
                 <% end %>
             </div>
         <% end %>
