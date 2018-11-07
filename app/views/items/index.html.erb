@@ -1,3 +1,4 @@
+<div class="sub-container">
 <p id="notice"><%= notice %></p>
 
 <h1>Items</h1>
@@ -17,19 +18,19 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td>
-          <% if item.images.attached? %>
-            <%= cl_image_tag(item.images[0].key, :width=>100, :crop=>"fit") %>
-          <% end %>
-        </td>
-        <td><%= item.brand %></td>
-        <td><%= item.model %></td>
-        <td><%= item.description %></td>
-        <td><%= item.price %></td>
-        <td><%= link_to 'Show', item %></td>
-        </tr>
+          <td>
+            <% if item.images.attached? %>
+              <%= cl_image_tag(item.images[0].key, :width=>100, :crop=>"fit") %>
+            <% end %>
+          </td>
+          <td><%= item.brand %></td>
+          <td><%= item.model %></td>
+          <td><%= item.description %></td>
+          <td><%= item.price %></td>
+          <td><%= link_to 'Show', item %></td>
+        </a>
+      </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
+</div>

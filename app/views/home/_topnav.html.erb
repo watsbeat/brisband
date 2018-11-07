@@ -1,19 +1,29 @@
 <%# Links to navigate site (top navbar)     %>
-<p>
 
-    <%= link_to 'Home', home_index_path %> |
-    <% if user_signed_in? %>
-        <%= link_to 'Profile', current_user %> |
-        <%= link_to 'Conversations', inbox_conversations_path %> 
-        <% if current_user.mailbox.inbox.unread(current_user).count > 0 %>
-            <strong>You Have <%= current_user.mailbox.inbox.unread(current_user).count %> Unread Messages </strong>
-        <% end %> |
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %> |
-            Logged in as <%= current_user.name %>
-    <% else %>
-        <%= link_to 'Sign up', new_user_registration_path %> |
-        <%= link_to 'Log in', new_user_session_path %>
-    <% end %>
-     <%= link_to 'Community Guidelines', home_guidelines_path %> |
-    <%= link_to 'Legal', home_legal_path %> 
-</p>
+<nav class="nav-extended">
+    <div class="nav-wrapper">
+        <%= link_to 'BrisBand', home_index_path, class: "brand-logo" %>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+                <li><%= link_to current_user.name, current_user %></li>
+                <li><%= link_to 'Conversations', inbox_conversations_path %></li>
+                <% if current_user.mailbox.inbox.unread(current_user).count > 0 %>
+                    <li><%= current_user.mailbox.inbox.unread(current_user).count %> Unread Messages</li>
+                <% end %>
+                <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+                <li><%= link_to 'Sign up', new_user_registration_path %></li>
+                <li><%= link_to 'Log in', new_user_session_path %></li>
+            <% end %>
+        </ul>
+    </div>
+    <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><%= link_to 'Gear', items_path %></li>
+            <li class="tab"><%= link_to 'Bands', bands_path %></li>
+            <li class="tab"><%= link_to 'Jams - COMING SOON!', root_path %></li>
+            <li class="tab"><%= link_to 'Gigs - COMING SOON!', root_path %></li>
+        </ul>
+    </div>
+</nav>

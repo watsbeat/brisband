@@ -1,3 +1,6 @@
+<div class="sub-container">
+<div class="content-background">
+
 <% if current_user && current_user.has_role?(:admin) %>
     <h2>Comments</h2>
         <% for comment in @flagged_comments %>
@@ -14,3 +17,6 @@
 <% else %>
     <%= redirect_to root_path %>
 <% end %>
+
+</div>
+</div>

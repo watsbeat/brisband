@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+@import "materialize/components/color-variables";
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+table {
+    background-color: azure;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: white;
+}
+
+.index {
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.content-background {
+    background-color: white;
+    color: black;
+}
+
+.content-background h1,
+.content-background h2,
+.content-background h3,
+.content-background h4,
+.content-background h5,
+.content-background h6 {
+    color: black;
+}
+
+.sub-container {
+    padding-bottom: 100px;
+}

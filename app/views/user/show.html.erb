@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<div class="sub-container">
+<div class="content-background">
 <% if current_user %>
   <% if @user.can_edit?(current_user) %>
     <%= link_to 'Account Settings', edit_user_registration_path %> 
@@ -66,3 +67,5 @@
     <%= link_to 'Add a Gear Post', new_item_path %>
   <% end %>
 <% end %>
+</div>
+</div>

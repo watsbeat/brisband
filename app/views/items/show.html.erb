@@ -1,102 +1,88 @@
-
-<p id="notice"><%= notice %></p>
-
-<% if @item.images.attached? %>
-  <% for image in @item.images %>
-    <%= cl_image_tag(image.key, :width=>400, :crop=>"fit") %>
-    <% if current_user %>
-      <% if @item.can_destroy?(current_user) %>
-        <%= link_to 'Remove', delete_image_attachment_item_url(image.signed_id),
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @item.brand %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @item.model %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<% if @item.for_sale %>
-  <p>
-    <strong>For Sale:</strong>
-    <%= @item.price %>
-  </p>
-  <% if current_user %>
-    <%= form_tag charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
+<div class="sub-container">    
+    <div class="content-background">
+        <p id="notice"><%= notice %></p>
+        <% if @item.images.attached? %>
+            <div class="carousel">
+                <% for image in @item.images %>
+                    <a class="carousel-item" href="#one!"><%= cl_image_tag(image.key) %></a>
+                <% end %>
+            </div>
+        <% end %>
+        <p>
+            <strong>Brand:</strong>
+            <%= @item.brand %>
+        </p>
+        <p>
+            <strong>Model:</strong>
+            <%= @item.model %>
+        </p>
+        <p>
+            <strong>Description:</strong>
+            <%= @item.description %>
+        </p>
+        <% if @item.for_sale %>
+            <p>
+                <strong>For Sale:</strong>
+                <%= @item.price %>
+            </p>
+            <% if current_user %>
+                <%= form_tag charges_path do %>
+                    <article>
+                        <% if flash[:error].present? %>
+                            <div id="error_explanation">
+                                <p><%= flash[:error] %></p>
+                            </div>
+                        <% end %>
+                    </article>
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                            data-description="<%= @item.brand %> <%= @item.model %> "
+                            data-label="Buy Now!"
+                            data-amount="<%= @item.price_in_cents %>"
+                            data-currency="aud"
+                            data-locale="auto"></script>
+                <% end %>
+            <% else %>
+                <p>Log in to purchase</p>
+            <% end %>
+        <% end %>
+        <strong>Belongs To:</strong>
+        <%= link_to @item.user.name, @item.user %> | 
+        <% if current_user %>
+            <%= link_to "Send them a message", new_conversation_path(recipient: @item.user) %> | 
+        <% else %>
+            Sign in to send a message | 
+        <% end %>
+        <% if current_user %>
+        <% if @item.can_edit?(current_user) %>
+            <%= link_to 'Edit', edit_item_path(@item) %> |
+        <% end %>
+        <% if @item.can_destroy?(current_user) %>
+            <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <% end %>
+        <%= link_to 'Flag Item', flag_item_path(@item.id), method: 'post' %>
+        <br>
+        <div>
+            <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
         </div>
-      <% end %>
-    </article>
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="<%= @item.brand %> <%= @item.model %> "
-            data-label="Buy Now!"
-            data-amount="<%= @item.price_in_cents %>"
-            data-currency="aud"
-            data-locale="auto"></script>
-    <% end %>
-  <% else %>
-    <p>Log in to purchase</p>
-  <% end %>
-<% end %>
-
-<p>
-  <strong>Belongs To:</strong>
-  <%= link_to @item.user.name, @item.user %> | 
-  <% if current_user %>
-    <%= link_to "Send them a message", new_conversation_path %>
-  <% else %>
-    Sign in to send a message 
-  <% end %>
-</p>
-<% if current_user %>
-  <% if @item.can_edit?(current_user) %>
-    <%= link_to 'Edit', edit_item_path(@item) %> |
-  <% end %>
-  <% if @item.can_destroy?(current_user) %>
-    <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  <%= link_to 'Flag Item', flag_item_path(@item.id), method: 'post' %>
-  <br>
-  <div>
-    <%= render partial:'comments/form', locals: {comment:nil, item: @item} %>
-  </div>
- <% else %>
-  Sign in to add comments
-<% end %>
-
-<h4>Comments:</h4>
-
-
-<% for comment in @item.comments.order(created_at: :desc) %>
-  <p>
-  <strong><%= link_to comment.user.name, comment.user %></strong> says <%= comment.description %>
-  </p>  
-  <p><%=time_ago_in_words comment.created_at%> ago</p>
-    <% if current_user %>
-      <% if comment.can_edit?(current_user) %>
-          <%= link_to 'Edit', edit_comment_path(comment) %>
-      <% end %>
-      <% if comment.can_destroy?(current_user, @item) %>
-          | <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <%= link_to 'Flag Comment', flag_comment_path(comment.id), method: 'post' %>
-    <% end %>
-<% end %>
+            <% else %>
+                Sign in to add comments
+            <% end %>
+        <h4>Comments:</h4>
+        <% for comment in @item.comments.order(created_at: :desc) %>
+            <p>
+                <strong><%= link_to comment.user.name, comment.user %></strong> says <%= comment.description %>
+            </p>  
+            <p><%=time_ago_in_words comment.created_at%> ago</p>
+            <% if current_user %>
+                <% if comment.can_edit?(current_user) %>
+                    <%= link_to 'Edit', edit_comment_path(comment) %> |
+                <% end %>
+                <% if comment.can_destroy?(current_user, @item) %>
+                    <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %> |
+                <% end %> 
+                <%= link_to 'Flag Comment', flag_comment_path(comment.id), method: 'post' %>
+            <% end %>
+        <% end %>
+    </div>
+</div>

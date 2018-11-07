@@ -1,4 +1,14 @@
+<div class="sub-container">
+<div class="content-background">
 <p id="notice"><%= notice %></p>
+
+<% if @band.images.attached? %>
+  <div class="carousel">
+    <% for image in @band.images %>
+      <a class="carousel-item" href="#one!"><%= cl_image_tag(image.key) %></a>
+    <% end %>
+  </div>
+<% end %>
 
 <% if @band.images.attached? %>
   <% for image in @band.images %>
@@ -75,3 +85,5 @@
     | <%= link_to 'Delete', @band, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
+</div>
+</div>
