@@ -5,7 +5,11 @@ class HomeController < ApplicationController
   end
 
   def admin
-    @flagged_comments = Comment.where(flagged: true)
-    @flagged_items = Item.where(flagged: true)
+    if current_user.has_role?(:admin)
+      @flagged_comments = Comment.where(flagged: true)
+      @flagged_items = Item.where(flagged: true)
+    else
+      redirect_to home_index_path
+    end
   end
 end
