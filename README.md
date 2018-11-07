@@ -30,10 +30,6 @@ Brisband is community centred and focused and by giving musicians the ability to
 #(hardware, networks, data centers, facilities and related equipment used to develop, test, operate, monitor, manage and/or support information technology services.)
 
 
-
-
-
-
 5. Identify and describe the software to be used in your App.
 
 The programming software we used include; Ruby on Rails, Bootstrap, HTML,CSS and SASS for the code and design bases. The application is built primarily on Rails, although we also included HTML for testing and code, we also incorporated the use of bootstrap, CSS and SASS to create tables and design.
@@ -41,7 +37,7 @@ The programming software we used include; Ruby on Rails, Bootstrap, HTML,CSS and
 Our third party software we are using are Postgres, stripe, Cloudinary, Ubuntu and Heroku.
 Heroku was our deployment site alongside Cloudinary for storing and bring back the code to display the output you see on the screen.
 Ubuntu was used in our coding environment.
-and lastly the stipe component is for the payment systems for user to user payments 
+And lastly the stipe component is for the payment systems for user to user payments 
 
 
 6. Identify the database to be used in your App and provide a justification for your choice.
@@ -49,10 +45,13 @@ and lastly the stipe component is for the payment systems for user to user payme
 
 7. Identify and describe the production database setup (i.e. postgres instance).
 
+
 8. Describe the architecture of your App.
+
+
 9. Explain the different high-level components (abstractions) in your App.it was chosen because it enables the functionality in an efficient way.t
 
- 10. Detail any third party services that your App will use.
+10. Detail any third party services that your App will use.
 
 
 11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).
@@ -88,36 +87,12 @@ stripe, postgres,
 
 
 #User Stories
-![User_Stories](./Desktop/User_Stories_&_Models_Brisband.docx)
+
 
 #Wireframes
-<! this is a digital version of the Wire frames >
-![Wire_Frames](./Desktop/BrisBand_Wireframes.pdf)
 
-<! hand drawn wire frames>
-![Wire_Frames_1](./Desktop/Wire_frames1_Brisband.JPG)
-![Wire_Frames_2](./Desktop/Wire_frames2_Brisband.JPG)
-![Wire_Frames_3](./Desktop/Wire_frames3_Brisband.JPG)
-![Wire_Frames_4](./Desktop/Wire_frames4_Brisband.JPG)
 
-<! site map is a photo of a white board drawing>
 #Site map
-![Site_map_Brisband](./Desktop/Site_map_Brisband.JPG)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -126,33 +101,35 @@ stripe, postgres,
 #Task Allocation & Tracking
 Q.17 How did we allocate & track tasks during this project?
 
-#Agile Methodology
 
+
+#Agile Methodology
 
 Q.18 How was agile methodology implemented during this project?
 
+
 #Source Control Process
+
 Q.19 What was our process for source control?
+
 
 Q.20 Why did we choose this process & how did it work?
 
 
-
-
-
-
-
-
-
-
-
-
-<! legal considerations>
 #IMPORTANT CONSIDERATIONS
 
 #Meeting Information System Security Requirements
 Q.21 What did we consider in regards to information system security for our app?
 
+
 #Protecting Information & Data
 22. Discuss methods you will use to protect information and data.
+
+To protect information and data we have rolify and devise. s
+
+
 23. Research what your legal obligations are in relation to handling user data.
+
+In our research we came across the Privacy Act 1988.
+Which states that in the case of user information being stored such as an email address or full name, there must be a privacy policy and or website disclaimer stating how the information is to be used. 
+We have added a legal tab to the website in the navigation bar which covers all aspects of our obligations under the act. 
