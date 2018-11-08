@@ -87,7 +87,7 @@ In the future we have big plans for BrisBand, we would like to add more to the s
     - Unflag an item-post or comment
 
 ## A workflow diagram of the user journey/s.
-![workflow diagram](https://github.com/kieran-lockyer/brisband/blob/master/docs/App/User%20Workflow%20Diagram.pdf)
+![wokflow-diagram](https://github.com/kieran-lockyer/brisband/blob/master/docs/App/User%20Workflow%20Diagram.pdf)
 
 ## Wireframes
 ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/BrisBand%20Wireframes.pdf)
