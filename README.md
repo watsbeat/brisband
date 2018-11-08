@@ -21,7 +21,7 @@ In the future we have big plans for BrisBand, we would like to add more to the s
         - Advertise their bands, including the gear each band memeber uses.
 
 ## Screenshots (of application)
-![App](.docs/App/Screenshot%20from%202018-11-08%2009-25-26.png)
+![App](https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-25-26.png)
 ![app](.docs/App/Screenshot%20from%202018-11-08%2009-25-29.png)
 ![app](.docs/App/Screenshot%20from%202018-11-08%2009-25-50.png)
 ![app](.docs/App/Screenshot%20from%202018-11-08%2009-26-00.png)
