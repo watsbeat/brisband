@@ -23,9 +23,9 @@
               <%= cl_image_tag(band.images[0].key, :width=>100, :crop=>"fit") %>
             <% end %>
           </td>
-          <td><%= band.name %></td>
-          <td><%= band.bio %></td>
-          <td><%= band.genre %></td>
+          <td><%= link_to band.name, band %></td>
+          <td><%= link_to band.bio, band %></td>
+          <td><%= link_to band.genre, band %></td>
           <td>
               <% if band.status == true %>
                   Active
@@ -33,7 +33,6 @@
                   Not Active
               <% end %>
           </td>
-          <td><%= link_to 'Show', band %></td>
         </tr>
       <% end %>
     </tbody>
