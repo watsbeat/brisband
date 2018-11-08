@@ -29,7 +29,7 @@ main {
 }
 
 table {
-    background-color: azure;
+    background-color: white;
 }
 
 h1,
@@ -71,4 +71,10 @@ h5 {
     a:visited {
         color: white;
     }
+}
+
+.car-centre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

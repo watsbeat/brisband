@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :purge_image]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
   # GET /items.json
@@ -46,7 +46,9 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        @item.images.attach(params[:item][:images])
+        if params[:item][:images]
+          @item.images.attach(params[:item][:images])
+        end
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
@@ -70,11 +72,13 @@ class ItemsController < ApplicationController
     imageblob = ActiveStorage::Blob.find_signed(params[:id])
     blob_id = imageblob.id
     imageattachment = ActiveStorage::Attachment.find_by(blob_id: blob_id)
+    @item = Item.find(imageattachment.record_id)
 
     if imageattachment != nil && imageattachment.purge
       imageblob.purge
     end
-    redirect_to item_url(@item.id)
+    
+    redirect_to edit_item_path(@item)
   end
 
   def flag
