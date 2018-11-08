@@ -12,7 +12,7 @@
         <% for conversation in @conversations %>
             <div>
                 <% if conversation.is_unread?(current_user) %>
-                    <strong><%= link_to conversation.subject, conversation_path(conversation) %></strong> |
+                    <em><%= link_to conversation.subject, conversation_path(conversation) %></em> |
                 <% else %>
                     <%= link_to conversation.subject, conversation_path(conversation) %> |
                 <% end %>
