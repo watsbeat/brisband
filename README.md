@@ -303,6 +303,10 @@ Why is it a problem that needs solving?
 
 16. Provide Wireframes for your App.
    ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes.png)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes2.png)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/wireframes3.png)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/wireframes4.png)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes5.png)
 
 17. Describe the way tasks are allocated and tracked in your project.
     We had a group meeting at the outset of the project to define major responsibilites such as managing github master repo, taking screenshots of our progress etc.
