@@ -3,7 +3,7 @@
 
 <h1>Items</h1>
 
-<table>
+<table class="striped">
   <thead>
     <tr>
       <th>Image</th>
@@ -23,12 +23,10 @@
               <%= cl_image_tag(item.images[0].key, :width=>100, :crop=>"fit") %>
             <% end %>
           </td>
-          <td><%= item.brand %></td>
-          <td><%= item.model %></td>
-          <td><%= item.description %></td>
-          <td><%= item.price %></td>
-          <td><%= link_to 'Show', item %></td>
-        </a>
+          <td><%= link_to item.brand, item %></td>
+          <td><%= link_to item.model, item %></td>
+          <td><%= link_to item.description, item %></td>
+          <td><%= link_to item.price, item %></td>
       </tr>
     <% end %>
   </tbody>
