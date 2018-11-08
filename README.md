@@ -21,18 +21,16 @@ In the future we have big plans for BrisBand, we would like to add more to the s
         - Advertise their bands, including the gear each band memeber uses.
 
 ## Screenshots (of application)
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-25-26.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-25-29.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-25-50.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-26-00.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-26-15.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-26-31.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-30-51.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-31-33.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2009-32-14.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2010-29-39.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2010-29-46.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20from%202018-11-08%2010-31-29.png
+![App](.docs/App/Screenshot%20from%202018-11-08%2009-25-26.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2009-25-29.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2009-25-50.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2009-26-00.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2009-26-31.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2009-30-51.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2009-32-14.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2010-29-39.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2010-29-46.png)
+![app](.docs/App/Screenshot%20from%202018-11-08%2010-31-29.png)
 
 ## Tech stack (e.g. html, css, deployment platform, etc)
     - Ruby
@@ -87,13 +85,13 @@ https://github.com/kieran-lockyer/brisband/blob/master/docs/App/Screenshot%20fro
     - Unflag an item-post or comment
 
 ## A workflow diagram of the user journey/s.
-https://github.com/kieran-lockyer/brisband/blob/master/docs/App/User%20Workflow%20Diagram.pdf
+![workflow diagram](.docs/App/User%20Workflow%20Diagram.pdf)
 
 ## Wireframes
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/BrisBand%20Wireframes.pdf
+![wire frames](.docs/Planning/BrisBand%20Wireframes.pdf)
 
 ## Database Entity Relationship Diagrams
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Brisband%20ERD.pdf
+![ERD](.docs/Planning/Brisband%20ERD.pdf)
 
 # Details of planning process including,
 ## Project Overview
@@ -137,19 +135,21 @@ https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Brisband%20
             Submission
             Presentation
 
+
+
 ## Screenshots of Trello board(s)
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-10-29%2009-40-29.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-10-29%2014-09-12.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-10-30%2010-16-56.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-10-30%2015-07-42.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-10-30%2016-35-24.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-10-31%2014-19-31.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-11-01%2010-21-12.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-11-02%2011-58-09.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-11-04%2013-06-52.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-11-05%2016-18-31.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-11-06%2014-21-09.png
-https://github.com/kieran-lockyer/brisband/blob/master/docs/Trello/Screenshot%20from%202018-11-07%2015-27-14.png
+![trello board](.docs/Trello/Screenshot%20from%202018-10-29%2009-40-29.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-10-29%2014-09-12.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-10-30%2010-16-56.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-10-30%2015-07-42.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-10-30%2016-35-24.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-10-31%2014-19-31.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-11-01%2010-21-12.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-11-02%2011-58-09.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-11-04%2013-06-52.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-11-05%2016-18-31.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-11-06%2014-21-09.png)
+![trello board](.docs/Trello/Screenshot%20from%202018-11-07%2015-27-14.png)
 
 # 2.2 Requirements - Short Answer Questions
 ### To demonstrate your knowledge you are required to answer a set of short questions. In your README.md file create a heading for each of the questions below and provide answers inline,
@@ -262,7 +262,7 @@ Why is it a problem that needs solving?
         - Has and belongs to many users
 
 14. Provide your database schema design.
-   https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Brisband%20ERD.pdf
+   ![ERD](.docs/Planning/Brisband%20ERD.pdf)
 
 15. Provide User stories for your App.
     As a user, I can:
