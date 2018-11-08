@@ -5,6 +5,10 @@ Rails.application.configure do
   config.cache_classes = true
 
   config.action_mailer.default_url_options = { host: 'www.sheltered-plains-31321.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
