@@ -26,7 +26,9 @@ class BandsController < ApplicationController
   # POST /bands.json
   def create
     @band = Band.new(band_params)
-    @band.images.attach(params[:band][:images])
+    if params[:band][:images]
+      @band.images.attach(params[:band][:images])
+    end
 
     respond_to do |format|
       if @band.save
