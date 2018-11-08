@@ -44,7 +44,9 @@ class BandsController < ApplicationController
   def update
     respond_to do |format|
       if @band.update(band_params)
-        @band.images.attach(params[:band][:images])
+        if params[:band][:images]
+          @band.images.attach(params[:band][:images])
+        end
         format.html { redirect_to @band, notice: 'Band was successfully updated.' }
         format.json { render :show, status: :ok, location: @band }
       else
@@ -68,11 +70,13 @@ class BandsController < ApplicationController
     imageblob = ActiveStorage::Blob.find_signed(params[:id])
     blob_id = imageblob.id
     imageattachment = ActiveStorage::Attachment.find_by(blob_id: blob_id)
+    @band = Band.find(imageattachment.record_id)
 
     if imageattachment != nil && imageattachment.purge
       imageblob.purge
     end
-    redirect_to band_url(@band.id)
+
+    redirect_to edit_band_path(@band)
   end
 
   private

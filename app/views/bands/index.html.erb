@@ -1,45 +1,43 @@
 <div class="sub-container">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<h1>Artists</h1>
+  <h1>Artists</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Bio</th>
-      <th>Genre</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bands.each do |band| %>
+  <table>
+    <thead>
       <tr>
-        <td>
-          <% if band.images.attached? %>
-            <%= cl_image_tag(band.images[0].key, :width=>100, :crop=>"fit") %>
-          <% end %>
-        </td>
-        <td><%= band.name %></td>
-        <td><%= band.bio %></td>
-        <td><%= band.genre %></td>
-        <td>
-            <% if band.status == true %>
-                Active
-            <% else %>
-                Not Active
-            <% end %>
-        </td>
-        <td><%= link_to 'Show', band %></td>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Bio</th>
+        <th>Genre</th>
+        <th>Status</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @bands.each do |band| %>
+        <tr>
+          <td>
+            <% if band.images.attached? %>
+              <%= cl_image_tag(band.images[0].key, :width=>100, :crop=>"fit") %>
+            <% end %>
+          </td>
+          <td><%= band.name %></td>
+          <td><%= band.bio %></td>
+          <td><%= band.genre %></td>
+          <td>
+              <% if band.status == true %>
+                  Active
+              <% else %>
+                  Not Active
+              <% end %>
+          </td>
+          <td><%= link_to 'Show', band %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Band', new_band_path %>
+  <br>
 </div>
