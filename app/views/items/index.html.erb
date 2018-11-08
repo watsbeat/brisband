@@ -18,15 +18,15 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-          <td>
-            <% if item.images.attached? %>
-              <%= cl_image_tag(item.images[0].key, :width=>100, :crop=>"fit") %>
-            <% end %>
-          </td>
-          <td><%= link_to item.brand, item %></td>
-          <td><%= link_to item.model, item %></td>
-          <td><%= link_to item.description, item %></td>
-          <td><%= link_to item.price, item %></td>
+        <td>
+          <% if item.images.attached? %>
+            <%= cl_image_tag(item.images[0].key, :width=>100, :crop=>"fit") %>
+          <% end %>
+        </td>
+        <td><%= link_to item.brand, item %></td>
+        <td><%= link_to item.model, item %></td>
+        <td><%= link_to item.description, item %></td>
+        <td><%= link_to item.price, item %></td>
       </tr>
     <% end %>
   </tbody>
