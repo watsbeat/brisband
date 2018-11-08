@@ -1,6 +1,6 @@
 class BandsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_band, only: [:show, :edit, :update, :destroy, :images]
+  before_action :set_band, only: [:show, :edit, :update, :destroy]
 
   # GET /bands
   # GET /bands.json
