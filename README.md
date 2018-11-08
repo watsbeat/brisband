@@ -87,13 +87,13 @@ In the future we have big plans for BrisBand, we would like to add more to the s
     - Unflag an item-post or comment
 
 ## A workflow diagram of the user journey/s.
-![wokflow-diagram](https://github.com/kieran-lockyer/brisband/blob/master/docs/App/User%20Workflow%20Diagram.pdf)
+![wokflow-diagram](https://github.com/kieran-lockyer/brisband/blob/master/docs/App/user%20workflow.png)
 
 ## Wireframes
-![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/BrisBand%20Wireframes.pdf)
+![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes.png)
 
 ## Database Entity Relationship Diagrams
-![ERD](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Brisband%20ERD.pdf)
+![ERD](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/ERD.png)
 
 # Details of planning process including,
 
@@ -265,7 +265,7 @@ Why is it a problem that needs solving?
         - Has and belongs to many users
 
 14. Provide your database schema design.
-   ![ERD](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Brisband%20ERD.pdf)
+   ![ERD](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/ERD.png)
 
 15. Provide User stories for your App.
     As a user, I can:
@@ -297,7 +297,7 @@ Why is it a problem that needs solving?
     - Unflag an item-post or comment
 
 16. Provide Wireframes for your App.
-   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/BrisBand%20Wireframes.pdf)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes.png)
 
 17. Describe the way tasks are allocated and tracked in your project.
     We had a group meeting at the outset of the project to define major responsibilites such as managing github master repo, taking screenshots of our progress etc.
