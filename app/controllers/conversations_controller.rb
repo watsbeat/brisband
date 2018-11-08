@@ -27,7 +27,16 @@ class ConversationsController < ApplicationController
 
     def new
         @conversation = Mailboxer::Conversation.new
-        @recipient = User.find(params[:recipient])
+        if params[:recipient] == "admin"
+            users = User.all
+            for user in users
+                if user.has_role?(:admin)
+                    @recipient = user
+                end
+            end
+        else
+            @recipient = User.find(params[:recipient])
+        end
     end
 
     def create
