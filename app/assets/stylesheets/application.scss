@@ -72,3 +72,9 @@ h5 {
         color: white;
     }
 }
+
+select,
+input[type="checkbox"] {
+    opacity: 1 !important;
+    display: block;
+}

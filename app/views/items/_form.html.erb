@@ -16,11 +16,13 @@
     <%= form.file_field :images, multiple: true %><br>
   </div>
 
-  <% for image in @item.images %>
-    <%= cl_image_tag(image.key) %>
-    <%= link_to 'Remove', delete_image_attachment_item_url(image.signed_id),
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
+  <% if item.images.attached? %>
+    <% for image in item.images %>
+      <%= cl_image_tag(image.key) %>
+      <%= link_to 'Remove', delete_image_attachment_item_url(image.signed_id),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %>
+    <% end %>
   <% end %>
 
   <div class="field">
