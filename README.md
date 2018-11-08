@@ -1,28 +1,28 @@
-#Brisband
+# Brisband
 
 What is BrisBand?  BrisBand is a community-driven marketplace for local Brisbane musicians to discuss and to buy and sell their used equipment. 
 BrisBand centralises interactions (e.g. opinions given on forums re instruments & recording gear, sale/borrowing of music equipment etc.) that already occur across a multitude of platforms, so that trade is a social and organic experience.
 
 In the future we have big plans for BrisBand, we would like to add more to the site including; a venues page that will give all upcoming gigs and rehearsal spaces you can rent out or possible perform at. We’d also like to add a band page function, as to then have local bands and their instruments and a bio for each member.
 
-####Heroku link to Brisband
+#### Heroku link to Brisband
     - https://sheltered-plains-31321.herokuapp.com/home/index
-####Link to Brisband Github Repo
+#### Link to Brisband Github Repo
     - https://github.com/kieran-lockyer/brisband
     
-##Problem definition / purpose
+## Problem definition / purpose
     Currently there is no single community that provides a venue wide-ranging discussions on gear, bands and gigs. Brisband aims to address this gap by creating an all-in-one community driven marketplace/social network/discussion forum.
 
-##Functionality / features
+## Functionality / features
     Users can create an account, with which they can:
         - Advertise gear that they use, and may be looking to sell.
         - Discuss gear with other Brisbane based musicians
         - Send private messages to one another.
         - Advertise their bands, including the gear each band memeber uses.
 
-##Screenshots (of application)
+## Screenshots (of application)
 
-##Tech stack (e.g. html, css, deployment platform, etc)
+## Tech stack (e.g. html, css, deployment platform, etc)
     - Ruby
     - Ruby on Rails
     - HTML
@@ -33,19 +33,19 @@ In the future we have big plans for BrisBand, we would like to add more to the s
     - Stripe
     - PostgresQL
 
-##Instructions on how to setup, configure and use your App.
+## Instructions on how to setup, configure and use your App.
     - Our app is deployed on Heroku. All that needs to be done to gain full funcionality on our app is to create an account, which can be done on any page of the site by clicking the Sign Up button in the top right.
     - Once signed in, there are clearly labeled navigation links which can direct users around the entire site, including creating posts, commenting, creating a band, and private messaging.
 
-#Design Documentation
-##Design process
+# Design Documentation
+## Design process
     - We began our design process by defining the scope of our app, in terms of features that would be completed by the end of the project, as well as stretch goals for future add-ons.
     - Once we defined the scope, we broke each feature down into user stories which allowed us to weed out bad ideas, and adjust others accordingly.
     - We then created an entity relationship diagram to design how different components should interact, and how we would structure the app design.
     - We created detailed wireframes to help with designed the user workflow, and what information we should present on each page.
     - Finally we created a user workflow diagram to finalise the path in which users would take to reach each page.
 
-##User stories
+## User stories
     As a user, I can:
     - Log in/out
     - Delete my account
@@ -74,22 +74,61 @@ In the future we have big plans for BrisBand, we would like to add more to the s
     - View a list of flagged item-posts
     - Unflag an item-post or comment
 
-##A workflow diagram of the user journey/s.
+## A workflow diagram of the user journey/s.
 
-##Wireframes
+## Wireframes
 
-##Database Entity Relationship Diagrams
+## Database Entity Relationship Diagrams
 
-###Site map
+### Site map
 
-#Details of planning process including,
+# Details of planning process including,
 
-##Project plan & timeline
+## Project Overview
+### Plan
+    - Our first initiative as a group was to plan out the scope of our app, and define a timeframe to which we would meet certain goals. Firstly we planned out all the features and user stories for our app. That provided us with a great amount of detail as to how long each aspect would take to implement.
+    - Based off of this, and the project deadline, we worked backwards to create checkpoints at which each portion of the project would need to be completed.
+    - We decided to give ourselves a full day on the Thursday before we submitted the project to create our presentation. This meant that the app would need to be completed by Wednesday in the 2nd week at the latest.
+    - As styling was not part of the assessment criteria, we decided to leave that as an optional task if we were able to complete the full functionality of our apps MVP during the first week. We were able to meet that goal which left us with Monday and Tuesday of the 2nd week to add some styling as per our original timeline plan.
+    - We decided that Wednesday of the second week should be dedicated to compiling the documnetation and answering the short answers section of the project.
+    
+### Timeline
+   #### Week 1
+        Monday
+            Project planning
+            Setting up Trello boards
+            Creating Github Workflow
+            Wireframing
+            Creating ERD
+            Scoping project
+            Creating User Stories
+        Tuesday -Wednesday
+            Creating Models, Views and Controllers
+            Deploy to Heroku
+        Thursday - Friday
+            Installing 3rd party gems
+            Testing with RSpec
+            Creating database relationships
+            Configuring views and controllers to implement full funtionality of the planned features
+   #### Week 2
+        Monday - Tuesday
+            Styling with Materialize
+            Refining and fixing bugs that were discovered through testing
+        Wednesday
+            Documentation
+            Styling with Materialize
+            Refining and fixing bugs that were discovered through testing
+        Thursday
+            Creating presentation
+            Final touches on app, minor modifications to configure Heroku.
+        Friday
+            Submission
+            Presentation
 
-##Screenshots of Trello board(s)
+## Screenshots of Trello board(s)
 
-#2.2 Requirements - Short Answer Questions
-###To demonstrate your knowledge you are required to answer a set of short questions. In your README.md file create a heading for each of the questions below and provide answers inline,
+# 2.2 Requirements - Short Answer Questions
+### To demonstrate your knowledge you are required to answer a set of short questions. In your README.md file create a heading for each of the questions below and provide answers inline,
 
 1. What is the need (i.e. challenge) that you will be addressing in your project?
     - Currently there is no single community that provides a venue wide-ranging discussions on gear, bands and gigs.
@@ -104,21 +143,14 @@ Why is it a problem that needs solving?
 4. Describe the network infrastructure the App may be based on.
     - Our app is deployed on Heroku, which is a cloud based Platfrom as a Service (PaaS) provider. Heroku handles the application servers, databases, web servers and firewalls to monitor traffic and unusual events. Once a user has been routed to Heroku by their ISP, Heroku handles the smooth operation of our web app such as load balancing, databse queries etc. 
 
-    ???
-    (hardware, networks, data centers, facilities and related equipment used to develop, test, operate, monitor, manage and/or support information technology services.)
-    ???
-
 5. Identify and describe the software to be used in your App.
     - Ruby on rails and default gems. It provides the necessary structure and plugins to enable our features to be implemented.
 
-    ???
-    The programming software we used include; Ruby on Rails, Bootstrap, HTML,CSS and SASS for the code and design bases. The application is built primarily on Rails, although we also included HTML for testing and code, we also incorporated the use of bootstrap, CSS and SASS to create tables and design.
-
-    Our third party software we are using are Postgres, stripe, Cloudinary, Ubuntu and Heroku.
-    Heroku was our deployment site alongside Cloudinary for storing and bring back the code to display the output you see on the screen.
-    Ubuntu was used in our coding environment.
-    And lastly the stipe component is for the payment systems for user to user payments 
-    ???
+    - Our third party software we are using are Postgres, Stripe, Cloudinary, Materialize and Heroku.
+    Heroku was our deployment site alongside Cloudinary for storing images.
+    And lastly the Stripe component is for the payment systems for user to user payments 
+    Postgres was used for our database
+    Materialize was used for styling
 
 6. Identify the database to be used in your App and provide a justification for your choice.
     - We are using Postgres as we have deployed our app on Heroku. Heroku does not support the native sqlite3 which comes by default on Ruby on Rails. We also used Postgres as we have more experience with being able to view and query the tables created by our schema. Lastly it is a requirement of this assignment.
