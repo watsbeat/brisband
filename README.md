@@ -92,7 +92,7 @@ In the future we have big plans for BrisBand, we would like to add more to the s
 ## Wireframes
 ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes.png)
 ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes2.png)
-![wireframes](https:/)/github.com/kieran-lockyer/brisband/blob/master/docs/Planning/wireframes3.png)
+![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/wireframes3.png)
 ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/wireframes4.png)
 ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes5.png)
 
