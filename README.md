@@ -90,7 +90,7 @@ In the future we have big plans for BrisBand, we would like to add more to the s
 ![workflow diagram](https://github.com/kieran-lockyer/brisband/blob/master/docs/App/User%20Workflow%20Diagram.pdf)
 
 ## Wireframes
-![wire frames](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/BrisBand%20Wireframes.pdf)
+![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/BrisBand%20Wireframes.pdf)
 
 ## Database Entity Relationship Diagrams
 ![ERD](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Brisband%20ERD.pdf)
