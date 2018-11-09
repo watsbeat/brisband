@@ -298,7 +298,7 @@ Why is it a problem that needs solving?
     As site-admin, I can:
     - Delete any item-post or comment or user
     - Delete any band-page
-    - View a list of flagged item-posts
+    - View a list of flagged item-posts 
     - Unflag an item-post or comment
 
 16. Provide Wireframes for your App.
