@@ -90,11 +90,13 @@ In the future we have big plans for BrisBand, we would like to add more to the s
 ![wokflow-diagram](https://github.com/kieran-lockyer/brisband/blob/master/docs/App/user%20workflow.png)
 
 ## Wireframes
-![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes.png)
-![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes2.png)
-![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/wireframes3.png)
-![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/wireframes4.png)
-![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Planning/Wireframes5.png)
+![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Wireframes/brisgear.jpg)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Wireframes/ipadwireframe.jpg)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Wireframes/mobilewireframe.jpg)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Wireframes/pcwireframe.jpg)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Wireframes/ipadwireframe.jpg)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Wireframes/itempage.jpg)
+   ![wireframes](https://github.com/kieran-lockyer/brisband/blob/master/docs/Wireframes/userpage.jpg)
 
 
 ## Database Entity Relationship Diagrams
